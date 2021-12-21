@@ -1,69 +1,130 @@
-body, html {
-  height: 100%;
-}
-
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #0d1117;
+  font-family: "Candara", serif;
+}
+
+a.button{
+  margin-top: 20px;
+  display:inline-block;
+  padding:0.3em 1.2em;
+  width: 90%;
+  border-radius:2em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  background-color:#4eb5f1;
+  text-align:center;
+  transition: all 0.2s;
+}
+a.button:hover{
+  background-color:#4095c6;
 }
 
 #container{
-  padding: 30px;
+  max-width: 100%;
+  margin: 50px 10% 0 2%;
+}
+
+#introduction-card{
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  color: white;
+}
+
+#education-card{
+  padding: 10px;
+  border-radius: 3px;
+  margin-top: 25px;
+  border: 1px solid gray;
+  color: white;
+}
+
+#projects-card{
+  border-radius: 3px;
+  margin-top: 25px;
+  color: white;
+}
+
+.project-cards{
+  grid-column: 2 / span 12;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(auto, 65px));
+  justify-content: space-evenly;
+  grid-gap: 25px;
+  grid-row-start: auto;
+}
+
+.project-card{
+  grid-column-end: span 4;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(75, 83, 87, 0);
+  border: 1px solid gray;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease 0s;
+}
+
+.project-card:hover{
+  transform: translateY(-7px);
+}
+
+.card-image-container{
   width: 100%;
-  font-family: "Candara", serif;
+  padding-top: 56.25%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image-container img{
+  width: 100%;
+  border-radius: 5px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
 }
 
-#introduction-inner{
-  background-color: #ffeedc;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.bg-image {
-  background-image: url("https://s3.envato.com/files/257204785/444-2729.jpg");
-  filter: blur(7px);
-  -webkit-filter: blur(2px);
+.card-content{
+  padding: 20px;
+  color: white;
   height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-#introduction-card{
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-#education-card{
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  padding: 10px;
-  border-radius: 3px;
-  margin-top: 25px;
-  background-color: #ffffff;
-}
-
-#projects-card{
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  padding: 10px;
-  border-radius: 3px;
-  margin-top: 25px;
-  background-color: white;
-}
-
-#row1{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-title{
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card-info{
+  align-items: center;
+}
+
+.card-language{
+  background-color: #162d3e;
+  margin-top: auto;
+  justify-content: flex-end;
+  color: white;
+  padding: 0 15px 0 15px;
+  border-radius: 10px;
 }
 
 #pfp-img-box{
   display: flex;
   flex-direction: column;
+  position: sticky;
   align-items: center;
-  justify-content: center;
-  margin-right: 20px;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 #pfp-img{
@@ -73,8 +134,7 @@ body, html {
 }
 
 #pfp-img-text{
-  color: black;
-  background-color: white;
+  color: white;
   padding: 15px;
   width: 100%;
   text-align: center;
@@ -85,21 +145,21 @@ body, html {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background-color: rgba(255, 255, 255, 0.32);
   border-radius: 5px;
   gap: 15px;
 }
 
 .row {
   display: flex;
+  flex-direction: row;
 }
 
-.column-text{
-  flex: 80%;
+.column-content{
+  flex: 60%;
 }
 
 .column-img {
-  flex: 20%;
+  flex: 40%;
   background-color: white;
   padding: 15px;
   border-radius: 10px;
@@ -113,10 +173,6 @@ body, html {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 600px) {
-  #container{
-    padding: 10px;
-  }
-
   #pfp-img{
     width: 200px;
     height: 200px;
@@ -125,29 +181,51 @@ body, html {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
+  #container {
+    width: 750px;
+  }
 
+  .project-card{
+    grid-column-end: span 6;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
+  #container {
+    width: 970px;
+  }
+
   #pfp-img-box{
     margin-right: 0;
   }
 
-  #container{
-    margin-top: 150px;
-  }
-
-  #row1{
-    flex-direction: column;
-  }
-
-  #introduction-card{
-    margin-top: 20px;
+  .project-card{
+    grid-column-end: span 12;
   }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (max-width: 1200px) {
+  .project-card{
+    grid-column-end: span 12;
+  }
 
+  #pfp-img-box{
+    margin: 0;
+  }
+
+  #container {
+    width: 1170px;
+    margin: 30px auto 0 auto;
+    padding: 40px;
+  }
+
+  .introduction{
+    margin-top: 25px;
+  }
+
+  .row{
+    flex-direction: column;
+  }
 }
