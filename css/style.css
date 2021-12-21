@@ -1,0 +1,153 @@
+body, html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#container{
+  padding: 30px;
+  width: 100%;
+  font-family: "Candara", serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+#introduction-inner{
+  background-color: #ffeedc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.bg-image {
+  background-image: url("https://s3.envato.com/files/257204785/444-2729.jpg");
+  filter: blur(7px);
+  -webkit-filter: blur(2px);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#introduction-card{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#education-card{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 10px;
+  border-radius: 3px;
+  margin-top: 25px;
+  background-color: #ffffff;
+}
+
+#projects-card{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 10px;
+  border-radius: 3px;
+  margin-top: 25px;
+  background-color: white;
+}
+
+#row1{
+  display: flex;
+  flex-direction: row;
+}
+
+#pfp-img-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+#pfp-img{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+#pfp-img-text{
+  color: black;
+  background-color: white;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  border-radius: 3px;
+}
+
+#handles-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: rgba(255, 255, 255, 0.32);
+  border-radius: 5px;
+  gap: 15px;
+}
+
+.row {
+  display: flex;
+}
+
+.column-text{
+  flex: 80%;
+}
+
+.column-img {
+  flex: 20%;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.introduction{
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  #container{
+    padding: 10px;
+  }
+
+  #pfp-img{
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  #pfp-img-box{
+    margin-right: 0;
+  }
+
+  #container{
+    margin-top: 150px;
+  }
+
+  #row1{
+    flex-direction: column;
+  }
+
+  #introduction-card{
+    margin-top: 20px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}
