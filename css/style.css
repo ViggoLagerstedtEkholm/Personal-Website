@@ -6,6 +6,18 @@
   font-family: "Candara", serif;
 }
 
+table, th, td {
+  border: 1px solid #e5e5e5;
+}
+
+th{
+  padding: 0 10px 0 10px;
+}
+
+td{
+  padding: 10px;
+}
+
 a.button{
   margin-top: 20px;
   display:inline-block;
@@ -21,8 +33,13 @@ a.button{
   text-align:center;
   transition: all 0.2s;
 }
+
 a.button:hover{
   background-color:#4095c6;
+}
+
+.white{
+  color: white;
 }
 
 #container{
@@ -37,11 +54,12 @@ a.button:hover{
   color: white;
 }
 
-#education-card{
+.education-card{
   padding: 10px;
   border-radius: 3px;
   margin-top: 25px;
   border: 1px solid gray;
+  width: 100%;
   color: white;
 }
 
@@ -66,7 +84,6 @@ a.button:hover{
   flex-direction: column;
   background-color: rgba(75, 83, 87, 0);
   border: 1px solid gray;
-  cursor: pointer;
   padding: 20px;
   border-radius: 5px;
   transition: all 0.3s ease 0s;
@@ -106,17 +123,33 @@ a.button:hover{
   text-align: center;
 }
 
+.card-link{
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
 .card-info{
   align-items: center;
 }
 
 .card-language{
-  background-color: #162d3e;
   margin-top: auto;
   justify-content: flex-end;
   color: white;
-  padding: 0 15px 0 15px;
+}
+
+.languages{
+  background-color: #162d3e;
   border-radius: 10px;
+  padding: 0 15px 0 15px;
+}
+
+.job-type{
+  background-color: #162d3e;
+  border-radius: 10px;
+  padding: 15px 15px 15px 20px;
 }
 
 #pfp-img-box{
